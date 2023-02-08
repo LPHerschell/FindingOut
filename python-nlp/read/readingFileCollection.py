@@ -39,7 +39,7 @@ insideDir = os.listdir(workingDir)
 print("inside this directory are the following files AND directories: " + str(insideDir))
 
 # use os.path.join to connect the subdirectory to the working directory:
-CollPath = os.path.join(workingDir, 'Lyrics.txt')
+CollPath = os.path.join(workingDir, 'readingFileCollection.py')
 print(CollPath)
 
 def readTextFiles(filepath):
