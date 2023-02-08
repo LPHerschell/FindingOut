@@ -39,7 +39,7 @@ insideDir = os.listdir(workingDir)
 print("inside this directory are the following files AND directories: " + str(insideDir))
 
 # use os.path.join to connect the subdirectory to the working directory:
-CollPath = os.path.join(workingDir, 'readingFileCollection.py')
+CollPath = os.path.join(workingDir, 'readingCollection')
 print(CollPath)
 
 def readTextFiles(filepath):
@@ -55,7 +55,7 @@ def readTextFiles(filepath):
         # playing with vectors here
         vectors = tokens.vector
 
-        wordOfInterest = nlp(u'panic')
+        wordOfInterest = nlp(u'Hey')
         # print(wordOfInterest, ': ', wordOfInterest.vector_norm)
 
         # Now, let's open an empty dictionary! We'll fill it up with the for loop just after it.
@@ -75,6 +75,15 @@ def readTextFiles(filepath):
         # I tried a couple of strategies to remove them. One is commented-out above.
         # The strategy below actually worked, and I based it on this example:
         # https://tutorial.eyehunts.com/python/python-remove-duplicates-from-dictionary-example-code/
+        # UPDATE 2023-02-07:
+        # Here are two MUCH simpler ways to remove duplicates. The first one is designed for dictionaries:
+        # 1. Use the dict.fromkeys() method, which would make a new dictionary using the distinct key values.
+        # 2. Or, convert the dictionary to a set() which is a structure containing only unique items.
+        # Then convert it back to a dictionary again with dict().
+        # And then, in that stage, sort the dictionary, too. Either of these would be a little less code than
+        # the method we used here.
+        # See handy article: https://careerkarma.com/blog/python-remove-duplicates-from-list/
+
         highSimilarityReduced = {}
         for key, value in highSimilarityDict.items():
             if value not in highSimilarityReduced.values():
@@ -96,5 +105,4 @@ for file in os.listdir(CollPath):
     if file.endswith(".txt"):
         filepath = f"{CollPath}/{file}"
         print(filepath)
-        sorted(readTextFiles(filepath))
-
+        readTextFiles(filepath)
