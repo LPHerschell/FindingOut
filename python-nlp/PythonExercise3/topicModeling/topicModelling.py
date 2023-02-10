@@ -87,7 +87,11 @@ for file in os.listdir(rpgTextFilesPath):
 # print(allDocs)
 
 # PREPARING THE CORPUS FOR TOPIC MODELING ########################
-cleaned_docs = [clean_doc(doc) for doc in allDocs]
+# cleaned_docs = [clean_doc(doc) for doc in allDocs]
+cleaned_docs = []
+for doc in allDocs:
+    print("This doc is going to the cleaners: " + f"{doc=}")
+    clean_doc(doc)
 id2word = corpora.Dictionary(cleaned_docs)
 
 # print(id2word[260])
