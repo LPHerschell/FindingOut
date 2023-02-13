@@ -25,7 +25,7 @@ def get_files():
         link = item.find('a')
         href = archive_url + link['href']
         download_links(href)
-    print("All RPG Files downloaded!")
+    print("All Fairy Tales Files downloaded!")
     # ebb: After class I realized the print line indicating
     # all files downloaded needed to go after THIS loop finished.
     # Do you see why it makes sense and works here?
