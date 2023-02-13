@@ -50,8 +50,8 @@ print(f"{string.punctuation=}")
 # Set up to read our file directory ###
 workingDir = os.getcwd()
 print("current working directory: " + workingDir)
-rpgTextFilesPath = os.path.join(workingDir, 'rpgTextFiles')
-print(rpgTextFilesPath)
+textFilesFictionPath = os.path.join(workingDir, 'textFilesFiction')
+print(textFilesFictionPath)
 
 
 # cleaning documents:
@@ -78,9 +78,9 @@ def clean_doc(doc):
 
 # ebb: This controls our file handling as a for loop over the directory:
 allDocs = []
-for file in os.listdir(rpgTextFilesPath):
+for file in os.listdir(textFilesFictionPath):
     if file.endswith(".txt"):
-        filepath = f"{rpgTextFilesPath}/{file}"
+        filepath = f"{textFilesFictionPath}/{file}"
         # print(filepath)
         allDocs.append(filepath)
         # clean_doc(filepath)
