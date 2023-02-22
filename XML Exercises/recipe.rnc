@@ -1,0 +1,30 @@
+start = recipe
+
+recipe = element recipe {
+  element title { text },
+  element author { text },
+  element date { text },
+  element description { text },
+  element note { text },
+  element utensils {
+    element utensil { text }+
+  },
+  element make-ahead { text },
+  element storage-notes { text },
+  element servings {
+    element tested-size { text },
+    element makes { text }
+  },
+  element ingredients {
+    element ingredient {
+      attribute amount { text },
+      attribute weight { text },
+      attribute name { text },
+      attribute additional { text }?,
+      text
+    }+
+  },
+  element directions {
+    element step { text }+
+  }
+}
