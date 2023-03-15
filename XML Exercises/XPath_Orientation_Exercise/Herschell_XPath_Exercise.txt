@@ -1,0 +1,53 @@
+1. 
+a. XPath can differentiate between acts and scenes based on their position within the HTML structure. Each act is contained within a <div> element with a class of "act", while each scene is contained within a <div> element with a class of "scene".
+
+b. In order to find just the acts, the XPath expression would be:
+//div[@class='act']
+
+This expression selects all <div> elements with a class of "act".
+
+c. This XPath expression would be:
+//div[@class='scene']
+
+This expression selects all <div> elements with a class of "scene".
+
+d. To find just the scenes inside Act II, the XPath expression would be:
+//div[@class='act'][2]//div[@class='scene']
+
+This selects all <div> elements with a class of "scene" that are descendants of the second <div> element with a class of "act". The [2] in the first part of the expression selects the second <div> element with a class of "act".
+
+
+2. 
+a. The XPath to find all the stage directions in the document: //stage
+
+b. What the XPath is to find all the stage directions inside Act 3: //div[@class='act' and @title='ACT III']//stage
+This expression selects all <stage> elements that are descendants of the <div> element with class attribute equal to "act" and title attribute equal to "ACT III".
+
+c. The XPath to find all of the stage directions that are nested inside a metrical line (<l>), that is, between the starting <l> and the ending </l>:
+//l//stage
+This expression selects all <stage> elements that are descendants of <l> elements.
+
+There are around 53 stage directions inside lines in "The Tempest."
+
+d. XPath to find all of the stage directions that are nested directly inside a speech (<sp>) and outside of the lines within a speech:
+//sp/stage
+This expression selects all <stage> elements that are children of <sp> elements.
+
+e. There are a few stage directions that are not inside a <sp> or <l>. These stage directions are nested within <p> elements.
+
+f. To return all of the stage directions that are not inside a speech or a line:
+//p/stage
+This expression selects all <stage> elements that are children of <p> elements. There are about 42 such stage directions.
+
+
+3. 
+
+a. The XPath expression to find all the speeches and isolate their @who attributes is:
+//sp/@who
+This selects all of the @who attributes that belong to <sp> elements.
+
+b. The XPath expression to return all the speeches spoken by Prospero is:
+//sp[@who='PROSPERO']
+For Miranda is:
+//sp[@who='MIRANDA']
+I believe I got around 113 when searching for Prospero and 52 for Miranda.
