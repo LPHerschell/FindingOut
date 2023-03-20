@@ -1,0 +1,39 @@
+1. Begin by testing the following regular expression Find and Replace patterns.
+
+First, please paste in the following regex pattern in the Find window: ^(.+?)(\n\n), and in the Replace window, paste in this expression: <sp>\1</sp>\2. Then, answer the following questions in your markdown or text file:
+
+a. Experiment with the Dot matches all setting: Inspect the results when Dot matches all is not checked, and then when it is checked. Then explain here, should you turn on Dot matches all, or not? Explain why or why not. (4 points)
+
+- When experimenting with the "Dot matches all" function, I found that enabling it allowed for me to find larger areas of text when finding. However, I found that checking this feature could potentially result in text that may not be desirable for a given find and replace function, often including text that was in parentheses and separate from the main lines and text. In conclusion, the "Dot matches all" feature is useful for finding anything that may be featured i a particular document or text file, but not finding specific points within the main text.
+
+b. Explain exactly what \1 and \2 are referring to in the replace window. What are these referring to in the Find expression, and why do we need to use these expressions? (4 points)
+
+- In the replace window, \1 and \2 are different capturing groups (first and second, respectfully) of which the zones of where the matching regular expressions are, and where they will be replaced in the find expression. We need to use these expressions to find and replace specific locations within any text-based file and especially in larger files.
+
+c.When you have decided the best course of action, complete the Find and Replace operation to tag the text blocks with <sp>.....</sp>.
+
+- *completed*
+
+2. What Find and Replace operation can you use to tag the stage directions (or cues for the actors) in this document? Record your Find and Replace operations, and if you use the dot in your expression, indicate whether you use Dot matches all or not (or whether it makes any difference). (5 points)
+
+- The expressions that I utilized to tag the stage directions in this document were "Find: ([.*?])" and "Replace with: <stage direction>\1</stage direction>". I did not mark "Dot matches all," but it did not have a major difference from what I was doing.
+
+
+3. What Find and Replace operation can you use to tag the speakers? Record your Find and Replace operations, and if you use the dot in your expression, indicate whether you use Dot matches all or not (or whether it makes any difference). (5 points)
+
+- The expressions that I utilized to tag the stage directions in this document were "Find: ^([A-Za-z]+):" and "Replace with: <speaker>\1</speaker>". I did not mark "Dot matches all," but it did not have a major difference from what I was trying to find and replace within my document.
+
+
+4. Add a root element to your document, save it as XML, and note anything you need to do (if anything) to make this a well-formed XML document (showing the green square). (2 points)
+
+- Completed, nothing was required to further complete this task.
+
+5. Optional: Extra credit (2 points): Notice that there are some stage directions that are not really meant to be inside character’s speeches. Can you use regular expressions to search and replace stage directions that are marked inside <sp> elements but are not inside real speeches—just block stage directions meant to stand by themselves? Record your expressions to remove the unnecessary <sp> elements from the code as a last step.
+
+- *n/a*
+
+6. Submit two files on Canvas to complete this test:
+
+- Your markdown or text file in which you have recorded your responses these exam questions (saved with .md or .txt file extension as in stepFile.md).
+
+- Your resulting file, saved with .xml file extension as in MalteseFalcon.xml.
